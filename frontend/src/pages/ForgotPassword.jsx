@@ -69,7 +69,7 @@ function ForgotPassword() {
                     <IoIosArrowRoundBack className='text-[#ff4d2d] hover:scale-105 cursor-pointer transition-transform' size={30} onClick={() => navigate("/signin")} />
                     <h1 className='text-2xl font-bold text-center text-[#ff4d2d]'>Forgot Password</h1>
                 </div>
-                {step == 1 &&
+                {step === 1 &&
                     <div>
                         <div className='mb-6'>
                             <label htmlFor="email" className='block text-gray-700 font-medium mb-1'>Email</label>
@@ -86,7 +86,7 @@ function ForgotPassword() {
                         }
                     </div>
                 }
-                {step == 2 &&
+                {step === 2 &&
                     <div>
                         <div className='mb-6'>
                             <label htmlFor="password" className='block text-gray-700 font-medium mb-1'>OTP</label>
@@ -103,7 +103,7 @@ function ForgotPassword() {
                         }
                     </div>
                 }
-                {step == 3 &&
+                {step === 3 &&
                     <div>
                         <div className='mb-6'>
                             <label htmlFor="newPassword" className='block text-gray-700 font-medium mb-1'>New Password</label>
