@@ -23,6 +23,7 @@ export const sendOtpMail=async(to,otp)=>{
       console.error("Reset Password mail sending failed:",error);
       throw error;
 }
+}
 
 export const sendDeliveryOtpMail=async(user,otp)=>{
     
