@@ -31,7 +31,7 @@ app.set("io",io)
 const port=process.env.PORT || 5000
 
 app.use(cors({
-    origin:["https://eatsure-llxs.onrender.com","https://eatsure-tan.vercel.app/"],,
+    origin:["https://eatsure-llxs.onrender.com","https://eatsure-tan.vercel.app/"],
     credentials:true
 }))
 app.use(express.json())
