@@ -12,20 +12,30 @@ const transporter = nodemailer.createTransport({
 });
 
 export const sendOtpMail=async(to,otp)=>{
-    await transporter.sendMail({
+    try{
+      await transporter.sendMail({
         from:process.env.EMAIL,
         to:to,
         subject:"Reset Your Password",
         html:`<p>Your OTP for password reset is <b>${otp}</b>. It expires in 5 minutes.</p>`
     })
+    }catch(error){
+      console.error("Reset Password mail sending failed:",error);
+      throw error;
 }
 
 export const sendDeliveryOtpMail=async(user,otp)=>{
-    await transporter.sendMail({
+    
+try {
+   await transporter.sendMail({
         from:process.env.EMAIL,
         to:user.email,
         subject:"OTP for Delivery From EatSure",
         html:`<p>Your OTP for your delivery is <b>${otp}</b>. Kindly Share the OTP to the delivery
         partner and receive your delivery. Thank you for ordering with us.</p>`
     })
+} catch (error) {
+      console.error("Delivery OTP mail sending failed:",error);
+      throw error;
+}
 }
