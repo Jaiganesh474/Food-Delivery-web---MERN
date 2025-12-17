@@ -4,6 +4,8 @@ dotenv.config()
 
 const transporter = nodemailer.createTransport({
   service: "gmail",
+  port:465,
+  secure:true,
   // true for 465, false for other ports
   auth: {
     user: process.env.EMAIL,
@@ -21,7 +23,7 @@ export const sendOtpMail=async(to,otp)=>{
     })
     }catch(error){
       console.error("Reset Password mail sending failed:",error);
-      throw error;
+      
 }
 }
 
@@ -37,6 +39,6 @@ try {
     })
 } catch (error) {
       console.error("Delivery OTP mail sending failed:",error);
-      throw error;
+    
 }
 }
